@@ -1,13 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <v-app>
+      <page-header></page-header>
+
+      <main>
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </main>
+    </v-app>
   </div>
 </template>
 
 <script>
+import PageHeader from '@/components/Header'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    PageHeader
+  }
 }
 </script>
 
@@ -19,5 +30,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+@media (min-width: 0) {
+  .flex.xs6{
+    width: 50% !important;
+  }
 }
 </style>
